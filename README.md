@@ -11,6 +11,8 @@ A virtual queuing system with SMS notifications, built with FastAPI and React.
 - 📊 Real-time queue status
 - 🎯 RESTful API
 - 🧪 Mock SMS provider for development (Twilio-ready for production)
+- 💻 Customer web interface for joining queues
+- 🔄 Auto-refreshing queue status page
 
 ## Tech Stack
 
@@ -66,14 +68,24 @@ By default, the app uses a mock SMS provider in development that logs messages t
 
 The mock provider is perfect for testing without incurring SMS costs.
 
-### Running the Server
+### Running the Application
 
+1. Start the backend server:
 ```bash
 python run.py
 ```
 
 The API will be available at `http://localhost:8000`
 API documentation at `http://localhost:8000/docs`
+
+2. Start the frontend (in a new terminal):
+```bash
+cd client
+npm install  # First time only
+npm run dev
+```
+
+The customer interface will be available at `http://localhost:3000`
 
 ## API Endpoints
 
