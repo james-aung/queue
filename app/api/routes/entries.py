@@ -14,6 +14,7 @@ from app.schemas.queue import (
 from app.schemas.queue import (
     QueueEntryCreate,
 )
+from app.services.sms import sms_service
 
 router = APIRouter()
 
@@ -69,6 +70,14 @@ def join_queue(
 
     result = QueueEntrySchema.model_validate(db_entry)
     result.estimated_wait_minutes = entries_ahead * queue.estimated_wait_minutes
+
+    # Send SMS notification
+    sms_service.send_queue_joined_notification(
+        phone_number=entry.phone_number,
+        queue_name=queue.business_name,
+        position=db_entry.position,
+        estimated_wait_minutes=result.estimated_wait_minutes,
+    )
 
     return result
 
@@ -169,7 +178,10 @@ def call_entry(
     result = QueueEntrySchema.model_validate(entry)
     result.estimated_wait_minutes = 0
 
-    # TODO: Send SMS notification here
+    # Send SMS notification
+    sms_service.send_customer_called_notification(
+        phone_number=entry.phone_number, queue_name=entry.queue.business_name
+    )
 
     return result
 

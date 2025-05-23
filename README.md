@@ -10,6 +10,7 @@ A virtual queuing system with SMS notifications, built with FastAPI and React.
 - 🔐 JWT-based authentication
 - 📊 Real-time queue status
 - 🎯 RESTful API
+- 🧪 Mock SMS provider for development (Twilio-ready for production)
 
 ## Tech Stack
 
@@ -51,7 +52,19 @@ uv sync --dev
 cp .env.example .env
 ```
 
-5. Edit `.env` with your configuration (Twilio credentials, etc.)
+5. Edit `.env` with your configuration
+
+### SMS Configuration
+
+By default, the app uses a mock SMS provider in development that logs messages to the console. To use Twilio in production:
+
+1. Set `ENVIRONMENT=production` in `.env`
+2. Add your Twilio credentials:
+   - `TWILIO_ACCOUNT_SID`
+   - `TWILIO_AUTH_TOKEN`
+   - `TWILIO_PHONE_NUMBER`
+
+The mock provider is perfect for testing without incurring SMS costs.
 
 ### Running the Server
 
