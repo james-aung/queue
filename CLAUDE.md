@@ -16,7 +16,8 @@ This project uses UV for Python package management and Ruff for linting/formatti
 - `uv sync --dev` - Install including dev dependencies
 - `ruff check .` - Lint the codebase
 - `ruff format .` - Format the codebase
-- `uvicorn app.main:app --reload` - Run the development server
+- `python run.py` - Run the development server
+- `uvicorn app.main:app --reload` - Alternative way to run the server
 - `pytest` - Run tests
 
 ### Environment Variables
