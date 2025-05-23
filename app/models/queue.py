@@ -45,6 +45,7 @@ queue_admins = Table(
 
 class Queue(Base):
     __tablename__ = "queues"
+    __allow_unmapped__ = True
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False, unique=True)
@@ -67,6 +68,7 @@ class Queue(Base):
 
 class QueueEntry(Base):
     __tablename__ = "queue_entries"
+    __allow_unmapped__ = True
 
     id = Column(Integer, primary_key=True, index=True)
     queue_id = Column(Integer, ForeignKey("queues.id"), nullable=False)

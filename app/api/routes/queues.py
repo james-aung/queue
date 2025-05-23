@@ -135,7 +135,7 @@ def update_queue(
         )
 
     # Update fields
-    update_data = queue_update.dict(exclude_unset=True)
+    update_data = queue_update.model_dump(exclude_unset=True)
     for field, value in update_data.items():
         setattr(queue, field, value)
 

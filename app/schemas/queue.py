@@ -33,8 +33,7 @@ class QueueInDB(QueueBase):
     created_at: datetime
     updated_at: Optional[datetime]
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class Queue(QueueInDB):
@@ -65,8 +64,7 @@ class QueueEntryInDB(QueueEntryBase):
     called_at: Optional[datetime]
     served_at: Optional[datetime]
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class QueueEntry(QueueEntryInDB):
