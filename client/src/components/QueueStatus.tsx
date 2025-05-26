@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { QueueEntry } from '../types';
+import type { QueueEntry } from '../types';
 import { queuesApi } from '../api/queues';
 import { ClockIcon, UserGroupIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon, BellIcon } from '@heroicons/react/24/solid';

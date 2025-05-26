@@ -1,5 +1,5 @@
 import apiClient from './client';
-import { Queue, QueueEntry, QueueEntryCreate } from '../types';
+import type { Queue, QueueEntry, QueueEntryCreate } from '../types';
 
 export const queuesApi = {
   // List all active queues

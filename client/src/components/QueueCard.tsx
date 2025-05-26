@@ -1,5 +1,5 @@
 import React from 'react';
-import { Queue } from '../types';
+import type { Queue } from '../types';
 import { ClockIcon, MapPinIcon, UsersIcon } from '@heroicons/react/24/outline';
 
 interface QueueCardProps {

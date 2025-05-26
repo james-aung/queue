@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Queue, QueueEntryCreate } from '../types';
+import type { Queue, QueueEntryCreate } from '../types';
 
 interface JoinQueueModalProps {
   queue: Queue | null;

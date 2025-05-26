@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Queue, QueueEntryCreate } from '../types';
+import type { Queue, QueueEntryCreate } from '../types';
 import { queuesApi } from '../api/queues';
 import { QueueCard } from '../components/QueueCard';
 import { JoinQueueModal } from '../components/JoinQueueModal';
