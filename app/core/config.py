@@ -1,9 +1,11 @@
 from typing import Optional
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env")
+
     database_url: str = "sqlite:///./queue.db"
     secret_key: str = "your-secret-key-here"
     algorithm: str = "HS256"
@@ -15,9 +17,6 @@ class Settings(BaseSettings):
 
     environment: str = "development"
     debug: bool = True
-
-    class Config:
-        env_file = ".env"
 
 
 settings = Settings()
