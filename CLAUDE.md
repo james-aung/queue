@@ -23,17 +23,15 @@ This project uses UV for Python package management and Ruff for linting/formatti
 
 ### Commands
 
-- `uv sync` - Install all dependencies
-- `uv sync --dev` - Install including dev dependencies
+- `uv sync --extra dev` - Install including dev dependencies
 - `ruff check .` - Lint the codebase
 - `ruff format .` - Format the codebase
-- `python run.py` - Run the development server
-- `uvicorn app.main:app --reload` - Alternative way to run the server
-- `pytest` - Run tests
-
-### Environment Variables
-
-Copy `.env.example` to `.env` and fill in the required values.
+- `uv run python run.py` - Run the development server
+- `cd client && npm run dev` - Run the frontend
+- `uv run pytest -v` - Run tests
+- `uv run python create_dummy_data.py` - Create test data for development
+- `pre-commit install` - Install pre-commit hooks
+- `pre-commit run --all-files` - Run pre-commit on all files
 
 ## Tech Stack
 
