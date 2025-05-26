@@ -65,8 +65,18 @@ export const QueueList: React.FC = () => {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <h1 className="text-2xl font-bold text-gray-900">Virtual Queue</h1>
-          <p className="text-sm text-gray-600 mt-1">Join a queue and get notified when it's your turn</p>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Virtual Queue</h1>
+              <p className="text-sm text-gray-600 mt-1">Join a queue and get notified when it's your turn</p>
+            </div>
+            <button
+              onClick={() => navigate('/shopkeeper/login')}
+              className="text-sm text-blue-600 hover:text-blue-500 font-medium"
+            >
+              Shopkeeper Login →
+            </button>
+          </div>
         </div>
       </header>
 
